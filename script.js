@@ -6,13 +6,13 @@ function addTask() {
     new Toast({
       text: "Поле не может быть пустым",
       type: "default",
-      duration: 100000,
+      duration: 3000,
     })._show();
   } else if (inputBox.value.length > 75) {
     new Toast({
       text: "Текст не может быть длиннее 75 символов",
       type: "default",
-      duration: 100000,
+      duration: 3000,
     })._show();
   } else {
     let li = document.createElement("li");
@@ -41,11 +41,37 @@ listContainer.addEventListener(
 );
 
 function saveData() {
-  localStorage.setItem("data", listContainer.innerHTML);
+  const tasks = [];
+  const listItem = listContainer.querySelectorAll("li");
+
+  listItem.forEach((item) => {
+    tasks.push({
+      title: item.textContent.replace("\u00d7", "").trim(),
+      isDone: item.classList.contains("checked"),
+    });
+  });
+
+  localStorage.setItem("data", JSON.stringify(tasks));
 }
 
 function showTask() {
-  listContainer.innerHTML = localStorage.getItem("data");
+  const tasks = JSON.parse(localStorage.getItem("data")) || [];
+
+  listContainer.innerHTML = "";
+
+  tasks.forEach((task) => {
+    const li = document.createElement("li");
+    li.textContent = task.title;
+
+    if (task.isDone) {
+      li.classList.add("checked");
+    }
+  });
+  const span = document.createElement("span");
+  span.innerHTML = "\u00d7";
+  li.appendChild(span);
+
+  listContainer.appendChild(li);
 }
 showTask();
 
