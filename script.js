@@ -66,12 +66,12 @@ function showTask() {
     if (task.isDone) {
       li.classList.add("checked");
     }
-  });
-  const span = document.createElement("span");
-  span.innerHTML = "\u00d7";
-  li.appendChild(span);
+    const span = document.createElement("span");
+    span.innerHTML = "\u00d7";
+    li.appendChild(span);
 
-  listContainer.appendChild(li);
+    listContainer.appendChild(li);
+  });
 }
 showTask();
 
