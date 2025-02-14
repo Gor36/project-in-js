@@ -10,6 +10,8 @@
   min-height: 100vh;
   background: url(./images/WhatsApp\ Image\ 2025-02-14\ at\ 10.41.09.jpeg);
   padding: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .todo-app {
