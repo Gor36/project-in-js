@@ -8,21 +8,24 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #153677, #4e085f);
+  background: url(/images/WhatsApp\ Image\ 2025-02-14\ at\ 10.41.09.jpeg);
   padding: 10px;
 }
 
 .todo-app {
   width: 100%;
   max-width: 540px;
-  background: #fff;
+  background: rgba(100, 100, 100, 0.25);
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 10px;
+  border: 1px solid #777;
+  box-shadow: 0 24px 35px rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(6px);
 }
 
 .todo-app h2 {
-  color: #002765;
+  color: #22abab;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -53,20 +56,33 @@ button {
   border: none;
   outline: none;
   padding: 16px 50px;
-  background: #ff5945;
+  background: #22abab;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 150, 150, 0.75);
+}
+button:hover {
+  background-color: #2c2c2c;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset,
+    rgba(255, 255, 255, 0.17) 0px -1px 1px 0px,
+    rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
 }
 
 ul li {
   list-style: none;
   font-size: 17px;
-  padding: 12px 8px 12px 50px;
+  padding: 12px 8px 18px 50px;
   user-select: none;
   cursor: pointer;
   position: relative;
+  background: rgba(127, 127, 127, 0.125);
+  border-radius: 8px;
+  line-height: 31px;
+  border: 1px solid #777;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.125);
 }
 
 ul li::before {
@@ -83,7 +99,7 @@ ul li::before {
 }
 
 ul li.checked {
-  color: #555;
+  color: orange;
   text-decoration: line-through;
 }
 
@@ -107,7 +123,6 @@ ul li span:hover {
   background: #edeef0;
 }
 
-/* CSS-переменные */
 :root {
   --toast-border-radius: 0.25rem;
   --toast-theme-default: #fff;
